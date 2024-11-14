@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1 class="text-center">Game Results</h1>
+{% if res %}
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Player Move</th>
+                <th>Bot Move</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in res %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ r.player.name }}</td>
+                    <td>{{ r.user_move }}</td>
+                    <td>{{ r.bot_move }}</td>
+                    <td>{{ r.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="text-center">No results yet. Start a game!</p>
+{% endif %}
+{% endblock body %}
