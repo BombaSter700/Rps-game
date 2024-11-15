@@ -15,7 +15,7 @@
         </thead>
         <tbody>
             {% for r in res %}
-                <tr>
+                <tr class="{% if r.series %}table-success{% endif %}">
                     <td>{{ forloop.counter }}</td>
                     <td>{{ r.player.name }}</td>
                     <td>{{ r.user_move }}</td>

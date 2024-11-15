@@ -30,6 +30,7 @@ class Migration(migrations.Migration):
                 ('user_move', models.CharField(blank=True, max_length=50)),
                 ('status', models.CharField(blank=True, max_length=50)),
                 ('player', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='score', to='app.player')),
+                ('created_at',models.DateTimeField(auto_now_add=True))
             ],
         ),
     ]
